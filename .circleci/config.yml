@@ -41,7 +41,7 @@ jobs:
       # - run: mvn integration-test
 
       # build!
-      - run: mvn package
+      - run: mvn package -Dmaven.test.skip=true
 
       - store_artifacts:
           path: target/service-plantuml-*.jar
