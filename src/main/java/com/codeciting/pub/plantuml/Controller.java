@@ -23,7 +23,7 @@ public class Controller {
         source = new String(Base64Utils.decodeFromString(source));
         SourceStringReader reader = new SourceStringReader(source);
         try {
-            response.setContentType("image/svg");
+            response.setContentType("image/svg+xml");
             response.setCharacterEncoding("UTF-8");
             response.setHeader("Cache-Control", "max-age=3600");
             reader.outputImage(response.getOutputStream(), option).getDescription();
