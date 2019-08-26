@@ -44,7 +44,7 @@ jobs:
       - run: mvn package -Dmaven.test.skip=true
 
       - store_artifacts:
-          path: target/service-plantuml-*.jar
+          path: target
 
       - deploy:
           command: |
