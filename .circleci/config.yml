@@ -48,4 +48,4 @@ jobs:
 
       - deploy:
           command: |
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/service-plantuml-*.jar oldman@www.codeciting.com:codeciting.com/service-plantuml
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/service-plantuml-*.jar oldman@www.codeciting.com:api.codeciting.com/plantuml && ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null oldman@www.codeciting.com "cd api.codeciting.com/plantuml && ./bin/app.sh restart"
