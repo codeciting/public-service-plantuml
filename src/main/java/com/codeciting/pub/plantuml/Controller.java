@@ -18,7 +18,7 @@ public class Controller {
 
     private FileFormatOption option = new FileFormatOption(FileFormat.SVG);
 
-    @GetMapping
+    @GetMapping("/")
     public void render(@RequestParam String source, HttpServletResponse response) {
         source = new String(Base64Utils.decodeFromString(source));
         SourceStringReader reader = new SourceStringReader(source);

@@ -1,0 +1,133 @@
+@startuml theme
+
+!define FONT_SIZE 14
+
+!define PRIMARY_COLOR #42b983
+!define PRIMARY_LIGHT #f3f5f7
+!define PRIMARY_TEXT  #2c3e50
+
+' Sequence
+
+skinparam ArrowColor    PRIMARY_COLOR
+skinparam RoundCorner   8
+skinparam Shadowing     false
+skinparam FontSize      FONT_SIZE
+
+skinparam Participant {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Actor {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Boundary {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Entity {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Control {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Database {
+    BorderColor         PRIMARY_COLOR
+    BackgroundColor     PRIMARY_LIGHT
+    FontColor           PRIMARY_TEXT
+    BorderThickness     1
+}
+
+skinparam Sequence {
+    ArrowThickness          2
+    LifeLineBorderThickness 2
+    LifeLineBorderColor     PRIMARY_COLOR
+    DelayFontColor          PRIMARY_TEXT
+}
+
+skinparam SequenceBox {
+    BorderColor         PRIMARY_COLOR
+    FontColor           PRIMARY_TEXT
+    BackgroundColor     #e0f8ed
+}
+
+skinparam SequenceGroup {
+    BorderColor         PRIMARY_COLOR
+    HeaderFontColor     PRIMARY_TEXT
+    FontColor           PRIMARY_TEXT
+    BodyBackgroundColor white
+    BorderThickness     1
+}
+
+
+'' Demo
+'
+'actor Actor                 as A
+'participant Participant     as P
+'boundary Boundary           as B
+'entity Entity               as E
+'box "A Box"
+'control Control             as C
+'database Database           as D
+'end box
+'
+'A -> P: Hi
+'P -> B: Hi
+'
+'alt Alt
+'B -> E: Hi
+'
+'else Else
+'C -> A: g
+'
+'else Else 2
+'A -> C: What
+'
+'end
+'
+'group Group
+'E -> C: Hi
+'end
+'
+'critical Critical
+'C -> D: Hi
+'end
+'
+'create Created
+'D -> Created
+'
+'par Parallel
+'Created -> E
+'end
+'
+'break Break
+'A -> D
+'end
+'
+'critical Critical
+'A -> D
+'end
+'
+'... delay ...
+'
+'||400||
+
+
+@enduml
